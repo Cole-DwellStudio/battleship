@@ -1,19 +1,21 @@
 export { Ship };
 
-const Ship = (newLocations) => {
-  let length = 0;
-  let hits = 0;
-  let sunk = false;
-  let locations = newLocations;
+class Ship {
+  constructor(locations, length, type) {
+    this.locations = locations;
+    this.length = length;
+    this.type = type;
+  }
 
-  const hit = () => {
-    if (!isSunk()) {
-      hits++;
-    }
-    isSunk();
+  type = null;
+  length = 0;
+  hits = 0;
+
+  hit = () => {
+    this.hits++;
   };
 
-  const isHit = (x, y) => {
+  isHit = (x, y) => {
     let success = false;
     locations.forEach((location) => {
       if (location.x == x && location.y == y) {
@@ -24,14 +26,8 @@ const Ship = (newLocations) => {
     return success;
   };
 
-  const isSunk = () => {
-    return hits >= length;
+  isSunk = () => {
+    if (this.hits >= this.length) return true;
+    return false;
   };
-
-  return {
-    hit,
-    isSunk,
-    isHit,
-    locations,
-  };
-};
+}

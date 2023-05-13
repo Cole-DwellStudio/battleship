@@ -14,9 +14,11 @@
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  border: solid 1px hsl(120, 100%, 50%);
-  border-collapse: collapse;
-  z-index: 20;
+  outline: solid 1px hsl(120, 100%, 50%);
+  background-clip: content-box;
+  background-position: center;
+  background-size: 94%;
+  background-repeat: no-repeat;
 }
 
 .cell:hover {
@@ -24,12 +26,64 @@
   box-shadow: inset 0 0 14px hsl(0, 100%, 50%);
 }
 
-.hit {
-  background: red;
+.shipx {
+  background-image: url("./battleship_midsection_x.png");
+}
+.shipx.hit {
+  background-image: url("./battleship_damage.png"),
+    url("./battleship_midsection_x.png");
+}
+
+.shipy {
+  background-image: url("./battleship_midsection_y.png");
+}
+.shipy.hit {
+  background-image: url("./battleship_damage.png"),
+    url("./battleship_midsection_y.png");
+}
+
+.startCap.shipx {
+  background-image: url("./battleship_endsection_x.png");
+}
+.startCap.shipx.hit {
+  background-image: url("./battleship_damage.png"),
+    url("./battleship_endsection_x.png");
+}
+
+.startCap.shipy {
+  background-image: url("./battleship_endsection_y.png");
+}
+.startCap.shipy.hit {
+  background-image: url("./battleship_damage.png"),
+    url("./battleship_endsection_y.png");
+}
+
+.endCap.shipx {
+  background-image: url("./battleship_endsection_xr.png");
+}
+.endCap.shipx.hit {
+  background-image: url("./battleship_damage.png"),
+    url("./battleship_endsection_xr.png");
+}
+
+.endCap.shipy {
+  background-image: url("./battleship_endsection_yt.png");
+}
+.endCap.shipy.hit {
+  background-image: url("./battleship_damage.png"),
+    url("./battleship_endsection_yt.png");
 }
 
 .miss {
-  background: blue;
+  background: #045e9f;
+}
+
+#opponent {
+  background-image: none;
+}
+
+#opponent.hit {
+  background-color: red;
 }
 
 .container {

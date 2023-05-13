@@ -1,0 +1,7 @@
+{
+  "config": {
+    "boardSize": 10,
+    "bonusMove": false,
+    "maxTurns": 200
+  }
+}
